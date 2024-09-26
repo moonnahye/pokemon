@@ -50,14 +50,18 @@ export default function App($app) {
   };
 
   const init = async () => {
-    const initialPokemonList = await getPokemonList(
-      this.state.type,
-      this.state.searchWord
-    );
-    this.setState({
-      ...this.state,
-      pokemonList: initialPokemonList,
-    });
+    try {
+      const initialPokemonList = await getPokemonList(
+        this.state.type,
+        this.state.searchWord
+      );
+      this.setState({
+        ...this.state,
+        pokemonList: initialPokemonList,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   init();
