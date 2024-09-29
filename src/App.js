@@ -14,7 +14,6 @@ export default function App($app) {
     return "";
   };
 
-
   this.state = {
     type: window.location.pathname.replace("/", ""),
     pokemonList: [],
@@ -46,7 +45,7 @@ export default function App($app) {
         history.pushState(null, null, `/?search=${searchWord}`);
         const pokemonList = await getPokemonList(this.state.type, searchWord);
         this.setState({
-          ...this.state,
+          type: '',
           pokemonList: pokemonList,
           searchWord: searchWord,
           currentPage: `/?search=${searchWord}`,
@@ -86,7 +85,6 @@ export default function App($app) {
       new PokemonDetail({
         $app, 
         initialState : {
-          ...this.state,
           pokemonDetail: pokemonDetail,
         },
       });

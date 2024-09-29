@@ -8,9 +8,8 @@ export default function PokemonDetail({$app, initialState}){
     $app.appendChild(this.$target);
 
     this.template = () => {
-        console.log(this.state);
+        console.log(this.state.pokemonDetail);
         let pokemonDetail = this.state.pokemonDetail;
-        
         
         // html 코드는 아래와 같이 제공드립니다.
         // 필요한 코드를 추가적으로 작성해 웹 사이트를 완성하세요.
